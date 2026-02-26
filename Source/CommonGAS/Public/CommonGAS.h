@@ -2,7 +2,10 @@
 
 #pragma once
 
+#include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
+
+DECLARE_LOG_CATEGORY_EXTERN(CommonGAS, Log, All);
 
 class FCommonGASModule : public IModuleInterface
 {

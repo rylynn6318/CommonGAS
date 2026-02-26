@@ -26,6 +26,8 @@ public class CommonGAS : ModuleRules
 			new string[]
 			{
 				"Core",
+				"CoreUObject",
+				"Engine",
 				"GameplayAbilities",
 				"GameplayTags",
 			}
@@ -35,8 +37,6 @@ public class CommonGAS : ModuleRules
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"CoreUObject",
-				"Engine",
 				"Slate",
 				"SlateCore",
 				// ... add private dependencies that you statically link with here ...	
