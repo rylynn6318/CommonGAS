@@ -30,6 +30,7 @@ public class CommonGAS : ModuleRules
 				"Engine",
 				"GameplayAbilities",
 				"GameplayTags",
+				"GameplayTasks",
 			}
 		);
 
