@@ -10,7 +10,8 @@ UENUM(BlueprintType)
 enum class ECommonAbilityActivationPolicy : uint8
 {
 	OnInputTriggered,
-	WhileInputActive
+	WhileInputActive,
+	OnSpawn
 };
 
 /**
@@ -22,6 +23,8 @@ class COMMONGAS_API UCommonGameplayAbility : public UGameplayAbility
 	GENERATED_BODY()
 
 public:
+	virtual void OnGiveAbility(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec) override;
+	
 	// Control Cooldown via SetByCaller
 	virtual const FGameplayTagContainer* GetCooldownTags() const override;
 	virtual void ApplyCooldown(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo) const override;
@@ -34,6 +37,8 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Ability")
 	AController* GetControllerFromActorInfo() const;
+	
+	void TryActivateAbilityOnSpawn(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec) const;
 
 protected:
 	// 쿨다운 태그, 태그 별로 한개의 쿨타임만 적용됨.
