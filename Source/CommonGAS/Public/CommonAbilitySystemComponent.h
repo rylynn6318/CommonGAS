@@ -15,6 +15,8 @@ class COMMONGAS_API UCommonAbilitySystemComponent : public UAbilitySystemCompone
 	GENERATED_BODY()
 
 public:
+	virtual void InitAbilityActorInfo(AActor* InOwnerActor, AActor* InAvatarActor) override;
+
 	void AbilityInputTagPressed(const FGameplayTag& InputTag);
 	void AbilityInputTagReleased(const FGameplayTag& InputTag);
 
@@ -26,6 +28,8 @@ protected:
 	virtual void AbilitySpecInputReleased(FGameplayAbilitySpec& Spec) override;
 
 private:
+	void TryActivateAbilitiesOnSpawn();
+
 	TArray<FGameplayAbilitySpecHandle> InputPressedSpecHandles;
 	TArray<FGameplayAbilitySpecHandle> InputReleasedSpecHandles;
 	TArray<FGameplayAbilitySpecHandle> InputHeldSpecHandles;
