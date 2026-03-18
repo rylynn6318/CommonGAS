@@ -93,7 +93,7 @@ void UCommonAbilitySet::GiveToAbilitySystem(UAbilitySystemComponent* AbilitySyst
 		const FCommonAbilitySet_AttributeSet& SetToGrant = GrantedAttributes[SetIndex];
 		if (!IsValid(SetToGrant.AttributeSet))
 		{
-			UE_LOG(CommonGAS, Error, TEXT("GrantedAttributes[%d] on ability set [%s] is not valid"), SetIndex, *GetNameSafe(this));
+			UE_LOG(LogCommonGAS, Error, TEXT("GrantedAttributes[%d] on ability set [%s] is not valid"), SetIndex, *GetNameSafe(this));
 			continue;
 		}
 
@@ -112,7 +112,7 @@ void UCommonAbilitySet::GiveToAbilitySystem(UAbilitySystemComponent* AbilitySyst
 		const FCommonAbilitySet_GameplayAbility& AbilityToGrant = GrantedGameplayAbilities[AbilityIndex];
 		if (!IsValid(AbilityToGrant.Ability))
 		{
-			UE_LOG(CommonGAS, Error, TEXT("GrantedGameplayAbilities[%d] on ability set [%s] is not valid"), AbilityIndex, *GetNameSafe(this));
+			UE_LOG(LogCommonGAS, Error, TEXT("GrantedGameplayAbilities[%d] on ability set [%s] is not valid"), AbilityIndex, *GetNameSafe(this));
 			continue;
 		}
 
@@ -135,7 +135,7 @@ void UCommonAbilitySet::GiveToAbilitySystem(UAbilitySystemComponent* AbilitySyst
 		const FCommonAbilitySet_GameplayEffect& EffectToGrant = GrantedGameplayEffects[EffectIndex];
 		if (!IsValid(EffectToGrant.GameplayEffect))
 		{
-			UE_LOG(CommonGAS, Error, TEXT("GrantedGameplayEffects[%d] on ability set [%s] is not valid"), EffectIndex, *GetNameSafe(this));
+			UE_LOG(LogCommonGAS, Error, TEXT("GrantedGameplayEffects[%d] on ability set [%s] is not valid"), EffectIndex, *GetNameSafe(this));
 			continue;
 		}
 

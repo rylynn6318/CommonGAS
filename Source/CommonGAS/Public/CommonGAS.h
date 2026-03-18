@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
 
-DECLARE_LOG_CATEGORY_EXTERN(CommonGAS, Log, All);
+DECLARE_LOG_CATEGORY_EXTERN(LogCommonGAS, Log, All);
 
 class FCommonGASModule : public IModuleInterface
 {

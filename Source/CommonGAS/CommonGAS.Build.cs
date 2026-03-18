@@ -28,6 +28,7 @@ public class CommonGAS : ModuleRules
 				"Core",
 				"CoreUObject",
 				"Engine",
+				"EnhancedInput",
 				"GameplayAbilities",
 				"GameplayTags",
 				"GameplayTasks",
@@ -38,8 +39,6 @@ public class CommonGAS : ModuleRules
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Slate",
-				"SlateCore",
 				// ... add private dependencies that you statically link with here ...	
 			}
 		);

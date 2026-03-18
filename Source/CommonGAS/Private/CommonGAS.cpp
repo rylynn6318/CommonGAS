@@ -4,7 +4,7 @@
 
 #define LOCTEXT_NAMESPACE "FCommonGASModule"
 
-DEFINE_LOG_CATEGORY(CommonGAS);
+DEFINE_LOG_CATEGORY(LogCommonGAS);
 
 void FCommonGASModule::StartupModule()
 {
