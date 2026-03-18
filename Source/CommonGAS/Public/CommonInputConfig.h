@@ -30,9 +30,15 @@ class COMMONGAS_API UCommonInputConfig : public UDataAsset
 
 public:
 	UFUNCTION(BlueprintCallable, Category = "CommonGAS|Input")
+	const UInputAction* FindNativeInputActionForTag(const FGameplayTag& InputTag, bool bLogNotFound = true) const;
+
+	UFUNCTION(BlueprintCallable, Category = "CommonGAS|Input")
 	const UInputAction* FindAbilityInputActionForTag(const FGameplayTag& InputTag, bool bLogNotFound = true) const;
 
 public:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Meta = (TitleProperty = "InputAction"))
+	TArray<FCommonInputAction> NativeInputActions;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Meta = (TitleProperty = "InputAction"))
 	TArray<FCommonInputAction> AbilityInputActions;
 };
